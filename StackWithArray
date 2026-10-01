@@ -1,24 +1,26 @@
 #include <iostream>
-
-
 using namespace std;
 
 class Stack {
+
 private:
 	int size;
 	int* arr;
 	int top;
+
 public:
 	// Constructor of the class Stack
 	// It initializes the variables: size, arr, and top
-	Stack(int s) {
+	
+Stack(int s) {
 		this->size = s;
 		top = -1;
 		arr = new int[size];
 
 	}
 	//Allows you to add an element to the top of the stack
-	void push(int data) {
+	
+void push(int data) {
 
 		if (size - top > 1) {
 			arr[++top] = data;
@@ -28,7 +30,8 @@ public:
 
 	}
 	// Allows you to remove the top element from the stack
-	void pop() {
+	
+void pop() {
 
 		if (top >= 0) {
 			top--;
@@ -37,7 +40,8 @@ public:
 		cout << "Stack is empty" << endl;
 	}
 	// Allows you to view the top element of the stack without removing it
-	int peek()
+	
+int peek()
 	{
 		if (top >= 0) {
 			return arr[top];
@@ -45,28 +49,20 @@ public:
 		return -1;
 	}
 	// Allows you to check if the stack is empty
-	bool isEmpty() {
+	
+bool isEmpty() {
 		return top == -1;
 	}
 	
 	//Destructor of the class Stack
 	// It deallocates the memory used by the stack
 	// It is called when the stack object goes out of scope or is deleted
-	~Stack() {
+	
+~Stack() {
 		delete[] arr;
 	}
 
 };
-
-
-
-
-
-
-
-
-
-
 int main() {
 	Stack st(10);
 	st.push(100);
@@ -76,7 +72,7 @@ int main() {
 	st.push(500);
 	st.push(600);
 	st.push(700);
-
+	//Displaying the top element of the stack, then deleting 2 elements from the stack, and checking if the stack is empty or not
 	cout << "Top element is: " << st.peek() << endl;
 	st.pop();
 	st.pop();
@@ -87,20 +83,14 @@ int main() {
 	else {
 		cout << "Stack is not empty" << endl;
 	}
+	// Displaying the top element of the stack after deleting 2 elements from the stack
 	cout << "Top element is: " << st.peek() << endl;
 
-
+	// Displaying the current elements of the stack
 	cout << " The current stack elements are: " << endl;
 
 	while (!st.isEmpty()) {
 		cout << st.peek() << " " << endl;
 		st.pop();
 	}
-
-
-	
-
-
-
-
 }
