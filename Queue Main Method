@@ -1,0 +1,32 @@
+#include <iostream>
+#include "Queue.h"
+using namespace std;
+int main() {
+	Queue q;
+	Queue q1;
+	cout << q.isEmpty() << endl;
+	
+	q.enqueue(10);
+	q.enqueue(20);
+	q.enqueue(30);
+	q.enqueue(40);
+	q.enqueue(50);
+	q.enqueue(60);
+	q.enqueue(70);
+	q.enqueue(80);
+	q.enqueue(90);
+	q.enqueue(100);
+	cout << "The front element of the queue is : " << q.peek() << endl;
+	cout << "Size of the queue is : " << q.size() << endl;
+	q.display();
+	q.dequeue();
+	q.dequeue();
+	q.dequeue();
+	cout << "The front element of the queue is:  " << q.peek() << endl;
+	cout << "Size of the queue is : " << q.size() << endl;
+	
+	q.display();
+
+
+	cout << q.isFull() << endl;
+}
