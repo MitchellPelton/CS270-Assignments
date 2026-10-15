@@ -1,0 +1,76 @@
+#include <iostream>
+#include "Queue.h"
+using namespace std;
+
+Queue::Queue() {
+	front = -1;
+	rear = -1;
+}
+// Adds an element into the queue
+void Queue::enqueue(int data){
+	if (isFull())
+	{
+		cout << "Queue is full! " << endl;
+		return;
+	}
+	if (front == -1) {
+		
+		front = 0;
+		rear = 0;
+		arr[rear] = data;
+	} else {
+		
+		rear = rear + 1;
+		arr[rear] = data;
+	}
+}
+// Removes an element from the queue
+int Queue:: dequeue() {
+	
+	if (isEmpty()) {
+		cout << "Queue is empty! " << endl;
+		exit(EXIT_FAILURE);
+	}
+	int x = arr[front];
+	front = front + 1;
+	return x;
+}
+// Checks if the queue is empty
+ bool Queue::isEmpty() const {
+	return (front == -1 || front > rear);
+}
+//Checks if the queue is full
+bool Queue::isFull()const {
+	return (rear == maxSize - 1);
+}
+//Displays the elements of the queue
+void Queue::display()const {
+	if (isEmpty()) {
+		cout << "Queue is empty! " << endl;
+		return;
+	}
+	cout << "Queue is : " << endl;;
+	for (int i = front; i <= rear; i++) {
+		cout << arr[i] << "  ";
+	
+	cout << endl;
+	}
+	
+}
+
+int Queue::peek()  {
+						if (isEmpty()) {
+			cout << "Queue is empty! " << endl;
+			return -1;
+		}
+		cout << " " << arr[front] << endl;
+		return arr[front];
+	}
+	int Queue::size()  {
+		if (isEmpty()) {
+			cout << "Queue is empty! " << endl;
+			return -1;
+		}
+		cout << " "  ;
+		return rear - front + 1;
+	}
