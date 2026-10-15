@@ -1,0 +1,25 @@
+#pragma once
+
+#include <iostream>
+using namespace std;
+
+class Queue
+{
+	static const int maxSize = 10;
+	int arr[maxSize];
+		int front;
+	int rear;
+
+public:
+	Queue(); //Constructor
+	void enqueue(int data); //Adds an element into the queue
+	int dequeue(); // Removes an elemennt from the queue
+	int peek() ; // Returns the front element of the queue without removing it
+	int size() ; // Returns the number of elements in the queue
+	bool isEmpty() const; // Returns true if the queue is empty, false otherwise
+	bool isFull() const; // Returns true if the queue is full, false otherwise
+	void display() const; // Displays the elements of the queue
+
+
+
+};
