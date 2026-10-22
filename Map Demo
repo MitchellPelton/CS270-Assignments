@@ -1,0 +1,22 @@
+#include <iostream>
+#include <map>
+using namespace std;
+int main() {
+	int arr[] = { 2,4,2,7,8,4,7,2,2,4 };
+	int size = sizeof(arr) / sizeof(arr[4]);
+	map<int, int> FreqOfNum;
+	for (int i = 0; i < size; i++)
+	{
+		FreqOfNum[arr[i]]++; //populating the map
+	}
+	cout << "All element count: " << endl;
+	
+	for (const auto& pair : FreqOfNum)
+	{
+		cout << "Element " << pair.first << " appears: " << pair.second << " times" << endl;
+	}
+	int target = 2;
+	cout << "Specific lookup: " << "The value of " << target << " appears " << FreqOfNum[target] << " times ";
+
+
+}
