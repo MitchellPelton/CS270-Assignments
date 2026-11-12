@@ -1,0 +1,21 @@
+//leaf node- node with no children
+//root node- base node of the tree
+//edge - connection between two nodes
+//binary tree- tree in which each node has at most two children
+//Parent node  - node that has children
+//Child node - node that is a descendant of a parent node
+//ancestor node - node that is a parent of a node up to the root
+//descendant node - node that is a child of a node
+//sibling nodes - nodes that share the same parent
+//internal node - node that has at least one child 
+//depth - number of edges from the root to a node
+//level - number of edges from the root to a node and the root is at level 0
+//height of a tree - number of edges on the longest path from the root to a leaf
+//binary search tree - binary tree in which the left child is less than the parent and the right child is greater than the parent
+//full binary tree - binary tree in which every node has either 0 or 2 children
+//complete binary tree - binary tree in which every level, except possibly the last, is completely filled, and all nodes are as far left as possible
+//perfect binary tree - binary tree in which all internal nodes have two children and all leaves are at the same level
+//bst search - searching for a value in a binary search tree
+//bst insert - inserting a value in a binary search tree
+//bst delete - deleting a value in a binary search tree
+//bst traversal - traversing a binary search tree in a specific order
