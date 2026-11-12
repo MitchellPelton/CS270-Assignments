@@ -19,3 +19,5 @@
 //bst insert - inserting a value in a binary search tree
 //bst delete - deleting a value in a binary search tree
 //bst traversal - traversing a binary search tree in a specific order
+//successor - node with the smallest value greater than the given node
+//predecessor - node with the largest value less than the given node
