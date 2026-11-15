@@ -1,0 +1,52 @@
+// LeetCode 338 - Counting Bits
+// Given n, return an array ans of length n + 1 where ans[i] is the
+// number of 1s in the binary representation of i.
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+class Solution {
+public:
+    vector<int> countBits(int n) {
+        // I'm going to build this up with DP so I only touch each number once.
+        // ans[0] = 0 since zero has no set bits.
+        vector<int> ans(n + 1, 0);
+
+        for (int i = 1; i <= n; i++) {
+            // The trick I like here: i >> 1 is just i with its last bit chopped off,
+            // and it's always smaller than i, so I've already computed it.
+            // Then I add back that last bit with (i & 1).
+            // Example: 13 = 1101 -> 13 >> 1 = 110 (6, which has two 1s),
+            // last bit of 13 is 1, so ans[13] = 2 + 1 = 3. Checks out.
+            ans[i] = ans[i >> 1] + (i & 1);
+        }
+
+        return ans;
+    }
+};
+
+int main() {
+    Solution sol;
+
+    // A few quick tests so I can run this locally.
+    // n = 2 -> [0, 1, 1]
+    // n = 5 -> [0, 1, 1, 2, 1, 2]
+    int tests[] = { 2, 5, 16 };
+
+    for (int n : tests) {
+        vector<int> res = sol.countBits(n);
+
+        cout << "n = " << n << " -> [";
+        for (size_t i = 0; i < res.size(); i++) {
+            cout << res[i];
+            if (i + 1 < res.size()) cout << ", ";
+        }
+        cout << "]" << endl;
+    }
+
+    return 0;
+}
+
+// Time:  O(n), one pass with constant work per number.
+// Space: O(1) extra, not counting the output array I have to return anyway.
