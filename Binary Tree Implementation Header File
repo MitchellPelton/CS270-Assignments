@@ -1,0 +1,24 @@
+#include <iostream>
+#include "Node.h"
+#pragma once
+
+class BinaryTree {
+private:
+	Node* root;
+	void display(Node* p, int level)const;
+	void preorder(Node* p)const;
+	void inorder(Node* p)const;
+	void postorder(Node* p)const;
+	int height(Node* p)const;
+	
+public:
+	BinaryTree();
+	bool isEmpty()const;
+	void display()const;
+	void preorder()const;
+	void inorder()const;
+	void postorder()const;
+	int height()const;
+	void levelOrder()const;
+	void CreateTree();
+};
