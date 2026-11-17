@@ -12,28 +12,31 @@ BinaryTree::BinaryTree() {
 }
 
 void BinaryTree::preorder(Node*p)const {
-if (p==nullptr){
-	return;
+	if (p == nullptr) {
+		return;
+	}
 	cout << p->info << " ";
 	preorder(p->lchild);
 	preorder(p->rchild);
-}
+
 }
 void BinaryTree::inorder(Node* p)const {
 	if (p == nullptr) {
 		return;
+	}
 		inorder(p->lchild);
 		cout << p->info << " ";
 		inorder(p->rchild);
-	}
+	
 }
 void BinaryTree::postorder(Node* p)const {
 	if (p == nullptr) {
 		return;
+	}
 		postorder(p->lchild);
 		postorder(p->rchild);
 		cout << p->info << " ";
-	}
+	
 }
 void BinaryTree::CreateTree() {
 
@@ -43,4 +46,17 @@ void BinaryTree::CreateTree() {
 	root->lchild->lchild = new Node('A');
 	root->lchild->rchild = new Node('B');
 	root->rchild->lchild = new Node('X');
+}
+
+void BinaryTree::preorder()const {
+	preorder(root);
+	cout << endl;
+}
+void BinaryTree::inorder()const {
+	inorder(root);
+	cout << endl;
+}
+void BinaryTree::postorder()const {
+	postorder(root);
+	cout << endl;
 }
