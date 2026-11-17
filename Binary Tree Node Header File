@@ -1,0 +1,18 @@
+#include <iostream>
+#pragma once
+class Node {
+
+public:
+	char info;
+	Node* lchild;
+	Node* rchild;
+	Node(char i) {
+		info = i;
+		lchild = nullptr;
+		rchild = nullptr;
+	}
+
+
+
+
+};
